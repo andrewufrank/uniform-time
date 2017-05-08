@@ -1,0 +1,17 @@
+dist
+dist-newstyle
+.stack-work
+.HTF
+\#*#
+*~
+*.lkshs
+*.lkshw
+*/*.lkshs
+*/*.lkshw
+unused.txt
+*.autosave*
+cabal.project.local
+ideaHaskellLib
+out
+testForLitTextdist
+
