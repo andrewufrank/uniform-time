@@ -2,14 +2,8 @@ flags: {}
 extra-package-dbs: []
 packages:
 - '.'
-- location:
-    git: https://github.com/andrewufrank/uniform-strings.git
-    extra-dep: true
-    commit: ba8bd37567758c1807bf470b3dda4f471cee0f5f
-- location:
-    git: https://github.com/andrewufrank/uniform-error.git
-    extra-dep: true
-    commit: 46c62fcf8b4d6b7a5a9a3622c724ab573fce295d
+- ../uniform-strings
+- ../uniform-error 
 extra-deps:
 - data-easy-0.7.0
-resolver: lts-8.13
+resolver: lts-8.15

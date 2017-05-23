@@ -25,6 +25,7 @@
 module Uniform.Time (
         module Uniform.Time
         , module Uniform.Error   -- or at least ErrIO
+        -- , module Uniform.Strings
         , UTCTime , EpochTime
 --    , htf_thisModulesTests
         )  where
@@ -33,7 +34,7 @@ import Test.Framework
 
 import Data.Time as T
 import Uniform.Error
-import Uniform.Strings
+-- import Uniform.Strings
 import Data.Convertible
 import System.Posix.Types (EpochTime)
 --class Times a where
