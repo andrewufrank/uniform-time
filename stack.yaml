@@ -5,4 +5,4 @@ packages:
 - ../uniform-strings
 - ../uniform-error 
 extra-deps:
-resolver: lts-8.15
+resolver: lts-9.1
