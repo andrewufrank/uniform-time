@@ -3,6 +3,7 @@ extra-package-dbs: []
 packages:
 - '.'
 - ../uniform-strings
-- ../uniform-error 
+- ../uniform-error
 extra-deps:
+- test-invariant-0.4.5.0
 resolver: lts-9.1
