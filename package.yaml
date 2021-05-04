@@ -2,17 +2,17 @@ name: uniform-time
 version: 0.1.0
 license:      GPL
 license-file: GPL_3
-maintainer:   Andrew U. Frank <andrewufrank@gmail.com>
+maintainer:   Andrew U. Frank <frank@geoinfo.tuwien.ac.at>
 author:       Andrew Frank
 copyright:    2021 Andrew U. Frank
-category: Time
+category: Time Uniform
 synopsis: handling of time in the uniform framework
-description: a close to minimal package for time
-    in a simple but flexible way to reduce complexity of Haskell.
-    version 0.1.0 to find problem with building 
-
-
-
+description: |
+  a very small package for time
+  bridges between function on 
+  - UTCTime
+  - EpochTime
+with an IsString for UTCTime
 
 extra-source-files:
 - README.md
@@ -35,6 +35,9 @@ dependencies:
 library:
   source-dirs: 
   - .
+  verbatim:
+    autogen-modules:
+        Paths_uniform_time
 
 # this is only a library, no directly executable
 # executables:
