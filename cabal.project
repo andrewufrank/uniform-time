@@ -1,0 +1,12 @@
+packages: 
+    *.cabal
+    ../uniform-algebras/*.cabal
+    ../uniform-error/*.cabal
+--   ../uniform-fileio/*.cabal
+--    ../uniform-json/*.cabal
+    ../uniform-strings/*.cabal
+--   ../uniform-time/*.cabal
+
+-- Disregard all upper bounds when dependency solving
+allow-newer: all 
+-- fails because  zlib <4.16

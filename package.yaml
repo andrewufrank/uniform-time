@@ -1,0 +1,64 @@
+name: uniform-time
+version: 0.1.0
+license:      GPL
+license-file: GPL_3
+maintainer:   Andrew U. Frank <andrewufrank@gmail.com>
+author:       Andrew Frank
+copyright:    2021 Andrew U. Frank
+category: Time
+synopsis: handling of time in the uniform framework
+description: a close to minimal package for time
+    in a simple but flexible way to reduce complexity of Haskell.
+    version 0.1.0 to find problem with building 
+
+
+
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+dependencies:
+- base >= 4.7 && < 5
+- monads-tf
+- time 
+- convertible
+        # , uniform-strings
+        # , uniform-error
+        # , time
+        # , convertible
+- uniform-strings
+- uniform-error
+- uniform-algebras
+# - uniform-time 
+
+library:
+  source-dirs: 
+  - .
+
+# this is only a library, no directly executable
+# executables:
+#   primo-exe:
+#     main:                Testing.hs
+#     source-dirs:         app
+#     ghc-options:
+#     - -threaded
+#     - -rtsopts
+#     - -with-rtsopts=-N
+#     dependencies:
+#     - uniform-algebras
+
+tests:
+  strings-test:
+    main:                TestingTime.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - uniform-time
+    - uniform-algebras
+    - HTF
+    - quickcheck-text
+    - uniform-strings

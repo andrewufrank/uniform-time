@@ -1,55 +1,61 @@
-name: uniform-time
-version: 0.0.9
-cabal-version: >=1.22
-build-type: Simple
-license: GPL
-license-file: GPL_3
-maintainer: Andrew U. Frank <andrewufrank@gmail.com>
-author: Andrew Frank
-category: Time
-synopsis: handling of time in the uniform framework
-description: a close to minimal package for time
-    in a simple but flexible way to reduce complexity of Haskell.
+cabal-version: 1.12
 
-source-repository head
-    type: git
-    location: https://github.com/andrewufrank/uniform-error.git
+-- This file has been generated from package.yaml by hpack version 0.34.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: f29ee1c52abc630ed4a0ea0707ee3f798469598eb41582c67fcf26fd25d16b73
+
+name:           uniform-time
+version:        0.1.0
+synopsis:       handling of time in the uniform framework
+description:    a close to minimal package for time in a simple but flexible way to reduce complexity of Haskell. version 0.1.0 to find problem with building
+category:       Time
+author:         Andrew Frank
+maintainer:     Andrew U. Frank <andrewufrank@gmail.com>
+copyright:      2021 Andrew U. Frank
+license:        GPL
+license-file:   GPL_3
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
 
 library
-    build-depends:
-        base >=4.8 && <= 5
-        , monads-tf
-        -- , safe
-        , uniform-strings
-        , uniform-error
-        , HTF
-        -- , safe
-        , time
-        , convertible
---        , old-time
-    exposed-modules:
-        Uniform.Time
+  exposed-modules:
+      Uniform.Time
+  other-modules:
+      Paths_uniform_time
+  hs-source-dirs:
+      ./.
+  build-depends:
+      base >=4.7 && <5
+    , convertible
+    , monads-tf
+    , time
+    , uniform-algebras
+    , uniform-error
+    , uniform-strings
+  default-language: Haskell2010
 
-    exposed: True
-    buildable: True
-    default-language: Haskell2010
-    hs-source-dirs: .
-    other-modules:
-
-
-Test-Suite timetest
-    type:       exitcode-stdio-1.0
-    build-depends:  base -any
-        , HTF
---                    bytestring -any, mtl,
---                   text -any, utf8-string -any
-       , uniform-error
-       , uniform-time
-       , uniform-strings
---       , data-easy
---       , basics -- must not be included, gives dependency issue
-    main-is: TestingTime.hs
-    buildable: True
-    default-language: Haskell2010
-    hs-source-dirs: src
-    other-modules:
+test-suite strings-test
+  type: exitcode-stdio-1.0
+  main-is: TestingTime.hs
+  other-modules:
+      Uniform.Time_test
+      Paths_uniform_time
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      HTF
+    , base >=4.7 && <5
+    , convertible
+    , monads-tf
+    , quickcheck-text
+    , time
+    , uniform-algebras
+    , uniform-error
+    , uniform-strings
+    , uniform-time
+  default-language: Haskell2010
