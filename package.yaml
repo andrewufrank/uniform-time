@@ -12,7 +12,7 @@ description: |
   bridges between function on 
   - UTCTime
   - EpochTime
-with an IsString for UTCTime
+  with an IsString for UTCTime
 
 extra-source-files:
 - README.md
