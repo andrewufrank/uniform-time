@@ -1,6 +1,6 @@
 A unifified manipulation of data on file
 
-uniform means:
+Uniform means:
 - same functions with identical semantics independent of representation
 - all functions are total (or become so using Maybe or Either)
 

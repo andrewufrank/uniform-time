@@ -1,45 +1,23 @@
------------------------------------------------------------------------------
+----------------------------------------------------------------------
 --
 -- Module      :  Uniform.Time
 --
------------------------------------------------------------------------------
--- {-# OPTIONS_GHC -F -pgmF htfpp #-}
--- {-# LANGUAGE BangPatterns                   #-}
-{-# LANGUAGE ConstraintKinds #-}
--- {-# LANGUAGE DeriveDataTypeable    #-}
-{-# LANGUAGE DoAndIfThenElse #-}
-{-# LANGUAGE FlexibleContexts #-}
+----------------------------------------------------------------------
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE MultiParamTypeClasses #-}
 {-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE ScopedTypeVariables #-}
-{-# LANGUAGE TypeFamilies #-}
--- {-# LANGUAGE TypeSynonymInstances       #-}
-{-# LANGUAGE UndecidableInstances #-}
-{-# OPTIONS_GHC -Wall -fno-warn-orphans #-}
-{-# OPTIONS_GHC -Wno-missing-signatures #-}
-
--- {-# OPTIONS_GHC -Wno-unused-imports #-}
 
 -- | a minimal set of time operations
 -- at the moment only a wrapper to time
 -- examples in TestingTime.hs
 module Uniform.Time
   ( module Uniform.Time,
-    module Uniform.Error, -- or at least ErrIO
-    -- , module Uniform.Strings
+    module Uniform.Error,  
     EpochTime,
     UTCTime (..),
-    -- , fromEpochTime'
-    --    , htf_thisModulesTests
   )
 where
 
--- import Test.Framework
-
--- (readNote, Error, ErrIO)
-
--- import Uniform.Strings (Text, CharChains2(..), IsString(..), t2s)
 import Data.Convertible (convert)
 import Data.Time as T
   ( NominalDiffTime,
@@ -54,30 +32,14 @@ import Data.Time as T
     parseTimeOrError,
     toGregorian,
   )
---import System.Time (getClockTime, toCalendarTime, calendarTimeToString)
 import Data.Time.Clock.POSIX
+    ( getCurrentTime, posixSecondsToUTCTime )
 import System.Posix.Types (EpochTime)
 import Uniform.Error
 
 year2000 :: UTCTime
 year2000 = readDate3 "2000-01-01"
-
--- may serve as zero in some applications
-
---class Times a where
---    type TimeUTC  a
---    type YMD a
---
---    getCurrentTimeUTC :: ErrIO a
---    addSeconds :: Double -> a ->  a
---    diffSeconds :: a -> a -> T.NominalDiffTime
---
---    toYMD :: a -> YMD a
---    diffDays :: a -> a -> Integer
---
---instance Times UTCTime where
---    type TimeUTC UTCTime =  T.UTCTime
---    type YMD UTCTime = (Integer, Int, Int)
+-- ^ may serve as zero in some applications
 
 instance CharChains2 UTCTime Text where -- orphan instance
   show' = s2t . show
@@ -115,9 +77,6 @@ getDateAsText = callIO $ do
   let res = formatTime defaultTimeLocale "%b %-d, %Y" now
   return . s2t $ res
 
---                        t <-  getClockTime
---                        tc <- toCalendarTime t
---                        return (s2t $ calendarTimeToString tc)
 
 readDate2 :: Text -> UTCTime
 -- ^ read data in the Jan 7, 2019 format (no . after month)
@@ -138,7 +97,6 @@ readDateMaybe :: Text -> Maybe UTCTime
 -- ^ read data in various formats (but not 9.10.20 !)
 readDateMaybe dateText =
   listToMaybe . catMaybes $
-    -- headNote "readDateMaybe werwerxx" . dropWhile isNothing $
     [ shortMonth,
       longMonth,
       monthPoint,
@@ -147,20 +105,6 @@ readDateMaybe dateText =
       isoformat
     ]
   where
-    -- fromJust $ shortMonth >>= longMonth
-
-    -- case shortMonth of
-    --     Just t -> Just t
-    --     Nothing -> case longMonth of
-    --         Just t2 -> Just t2
-    --         Nothing -> case monthPoint of
-    --             Just t3 -> Just t3
-    --             Nothing -> case germanNumeralShort of
-    --               Just t4 -> Just t4
-    --               Nothing -> case germanNumeral of
-    --                 Just t5 -> Just t5
-    --                 Nothing ->  isoformat
-
     shortMonth :: Maybe UTCTime
     shortMonth =
       parseTimeM
@@ -209,5 +153,3 @@ readDateMaybe dateText =
 
 fromEpochTime' :: EpochTime -> UTCTime
 fromEpochTime' et = posixSecondsToUTCTime (realToFrac et)
-
--- from Distribution.Hackage.DB.Utility from hackage-db
