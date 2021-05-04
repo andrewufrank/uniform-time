@@ -1,4 +1,4 @@
-A unifified manipulation of data on file
+A unifified manipulation of time and date representations
 
 Uniform means:
 - same functions with identical semantics independent of representation
