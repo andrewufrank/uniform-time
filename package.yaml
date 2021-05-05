@@ -1,18 +1,24 @@
 name: uniform-time
 version: 0.1.0
-license:      GPL
-license-file: GPL_3
-maintainer:   Andrew U. Frank <frank@geoinfo.tuwien.ac.at>
+license:      GPL-2.0-only
+# license-file: GPL_3
+maintainer:   Andrew U. Frank <uniform@gerastree.at>
 author:       Andrew Frank
 copyright:    2021 Andrew U. Frank
 category: Time Uniform
-synopsis: handling of time in the uniform framework
+synopsis: Time in the uniform framework
 description: |
-  a very small package for time
+  A very small package for time
+
   bridges between function on 
+
   - UTCTime
+
   - EpochTime
+
   with an IsString for UTCTime
+
+  Please see the README on GitHub at <https://github.com/andrewufrank/uniform-time/readme>
 
 extra-source-files:
 - README.md
