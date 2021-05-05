@@ -3,6 +3,7 @@ version: 0.1.0
 license:      GPL-2.0-only
 # license-file: GPL_3
 maintainer:   Andrew U. Frank <uniform@gerastree.at>
+bug-reports:  https://github.com/andrewufrank/uniform-time/issues
 author:       Andrew Frank
 copyright:    2021 Andrew U. Frank
 category: Time Uniform
@@ -16,7 +17,7 @@ description: |
 
   - EpochTime
 
-  with an IsString for UTCTime
+  with an `IsString` for UTCTime
 
   Please see the README on GitHub at <https://github.com/andrewufrank/uniform-time/readme>
 
