@@ -12,9 +12,10 @@
 -- examples in TestingTime.hs
 module Uniform.Time
   ( module Uniform.Time,
-    module Uniform.Error,  
+    -- module Uniform.Strings,  
     EpochTime,
     UTCTime (..),
+    ErrIO 
   )
 where
 
@@ -35,7 +36,14 @@ import Data.Time as T
 import Data.Time.Clock.POSIX
     ( getCurrentTime, posixSecondsToUTCTime )
 import System.Posix.Types (EpochTime)
+
 import Uniform.Error
+--(ErrIO, errorT)
+
+import Uniform.Strings
+-- Text, CharChains2, show', IsString(..), t2s, s2)
+
+import Uniform.Zero
 
 year2000 :: UTCTime
 year2000 = readDate3 "2000-01-01"
