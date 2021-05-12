@@ -7,7 +7,7 @@
     {-# LANGUAGE
     MultiParamTypeClasses
     , TypeSynonymInstances
---    , FunctionalDependencies
+   , FunctionalDependencies
     , FlexibleInstances
     , FlexibleContexts
     , ScopedTypeVariables
@@ -95,9 +95,9 @@ test_showRead =
      show1 = show time1 :: String
      read1 = read show1 :: UTCTime
 
-test_show = assertEqual (timeX) 
-        (readNote "test_showT" timeXshow :: UTCTime)
-timeXshow = show timeX :: String 
+-- test_show = assertEqual (timeX) 
+--         (readNoteT "test_showT" timeXshow :: UTCTime)
+-- timeXshow = show timeX :: String 
 
 -- test_pp = assertEqual (show timeX) (ppShow timeX)
 -- demonstrates the issue with ppShow which cannot be 

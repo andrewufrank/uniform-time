@@ -53,17 +53,17 @@ library:
 #     dependencies:
 #     - uniform-algebras
 
-# tests:
-#   strings-test:
-#     main:                TestingTime.hs
-#     source-dirs:         test
-#     ghc-options:
-#     - -threaded
-#     - -rtsopts
-#     - -with-rtsopts=-N
-#     dependencies:
-#     - uniform-time
-#     - uniform-algebras
-#     - HTF
-#     - quickcheck-text
-#     - uniform-strings
+tests:
+  strings-test:
+    main:                TestingTime.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - uniform-time
+    - uniform-algebras
+    - HTF
+    - quickcheck-text
+    - uniform-strings
