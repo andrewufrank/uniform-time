@@ -1,5 +1,5 @@
 packages: 
     ./*.cabal
-    ../uniform-algebras/*.cabal
-    ../uniform-strings/*.cabal
-    ../uniform-error/*.cabal
+--    ../uniform-algebras/*.cabal
+--    ../uniform-strings/*.cabal
+--    ../uniform-error/*.cabal
