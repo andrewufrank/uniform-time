@@ -1,10 +1,10 @@
 cabal-version: 2.2
 
--- This file has been generated from package.yaml by hpack version 0.34.2.
+-- This file has been generated from package.yaml by hpack version 0.34.4.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 7ae5504c920318f556131b567a57d0f46bf034b9882f3280d9c43e418563e029
+-- hash: 5ba1602d90e12b965629c4773b73d3cabbb5265bb21502f4f569dd499b28a348
 
 name:           uniform-time
 version:        0.1.1
@@ -37,7 +37,7 @@ library
   other-modules:
       Paths_uniform_time
   hs-source-dirs:
-      ./.
+      ./
   build-depends:
       base >=4.7 && <5
     , convertible
@@ -48,25 +48,3 @@ library
     , uniform-strings
   default-language: Haskell2010
   autogen-modules: Paths_uniform_time
-
-test-suite strings-test
-  type: exitcode-stdio-1.0
-  main-is: TestingTime.hs
-  other-modules:
-      Uniform.Time_test
-      Paths_uniform_time
-  hs-source-dirs:
-      test
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N
-  build-depends:
-      HTF
-    , base >=4.7 && <5
-    , convertible
-    , monads-tf
-    , quickcheck-text
-    , time
-    , uniform-algebras
-    , uniform-error
-    , uniform-strings
-    , uniform-time
-  default-language: Haskell2010
