@@ -1,5 +1,5 @@
 name: uniform-time
-version: 0.1.1
+version: 0.1.3
 license:      GPL-2.0-only
 # license-file: GPL_3
 maintainer:   Andrew U. Frank <uniform@gerastree.at>
@@ -19,6 +19,8 @@ description: |
 
   with an `IsString` for UTCTime
 
+  added stack build lts 19.16 for ghc 9.0.2
+
   Please see the README on GitHub at <https://github.com/andrewufrank/uniform-time/readme>
 
 extra-source-files:
@@ -30,7 +32,7 @@ dependencies:
 - monads-tf
 - time 
 - convertible
-- uniform-strings
+- uniform-strings 
 - uniform-error
 - uniform-algebras
 
